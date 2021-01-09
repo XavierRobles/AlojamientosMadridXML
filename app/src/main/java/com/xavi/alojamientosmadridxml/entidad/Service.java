@@ -8,7 +8,7 @@ import org.simpleframework.xml.Root;
 import java.util.List;
 @Root(strict = false)
 public class Service {
-    @ElementList
+    @ElementList(name = "geoData")
     private List<GeoData> geoData;
 
     public Service() {
