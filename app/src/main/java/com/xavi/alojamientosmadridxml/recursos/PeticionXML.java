@@ -2,6 +2,7 @@ package com.xavi.alojamientosmadridxml.recursos;
 
 import android.util.Log;
 
+import com.xavi.alojamientosmadridxml.entidad.GeoData;
 import com.xavi.alojamientosmadridxml.entidad.Service;
 import com.xavi.alojamientosmadridxml.entidad.ServiceList;
 
@@ -15,19 +16,22 @@ import retrofit2.Retrofit;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class PeticionXML {
+  static  Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://www.esmadrid.com/")
+            .addConverterFactory(SimpleXmlConverterFactory.create())
+            .build();
+    static      PedirDatos service = retrofit.create(PedirDatos.class);
     public static void pedirAlojamiento() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.esmadrid.com/")
-                .addConverterFactory(SimpleXmlConverterFactory.create())
-                .build();
-        PedirDatos service = retrofit.create(PedirDatos.class);
+
+
         Call<ServiceList> llamada = service.pedirAlojamientos();
         llamada.enqueue(new Callback<ServiceList>() {
             @Override
             public void onResponse(Call<ServiceList> call, Response<ServiceList> response) {
                 ServiceList s = response.body();
-                List<Service> lista_services = s.getLista_service();
-                Log.d("RESPUESTA", lista_services.toString());
+                List<GeoData> lista_services = s.getLista_service();
+                Log.d("RESPUESTA", s.getLista_service().toString());
+
             }
             @Override
             public void onFailure(Call<ServiceList> call, Throwable t) {

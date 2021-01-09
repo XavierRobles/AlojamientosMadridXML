@@ -3,31 +3,31 @@ package com.xavi.alojamientosmadridxml.entidad;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-@Root(strict = false)
+@Root(name = "geoData", strict = false)
 public class GeoData {
     @Element(name = "address")
     public String address;
-    @Element(name="zipcode")
-    private String cp;
-    @Element(name="locality")
-    private String provincia;
-    @Element(name="country")
-    private String pais;
+    @Element(name = "zipcode")
+    public String zipcode;
+    @Element(name = "locality")
+    public String provincia;
+    @Element(name = "country")
+    public String pais;
 
-    public String getCalle() {
+    public String getAddress() {
         return address;
     }
 
-    public void setCalle(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getCp() {
-        return cp;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setCp(String cp) {
-        this.cp = cp;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public String getProvincia() {
@@ -49,8 +49,8 @@ public class GeoData {
     @Override
     public String toString() {
         return "GeoData{" +
-                "calle='" + address + '\'' +
-                ", cp='" + cp + '\'' +
+                "address='" + address + '\'' +
+                ", zipcode='" + zipcode + '\'' +
                 ", provincia='" + provincia + '\'' +
                 ", pais='" + pais + '\'' +
                 '}';
