@@ -26,7 +26,8 @@ public class PeticionXML {
             @Override
             public void onResponse(Call<ServiceList> call, Response<ServiceList> response) {
                 ServiceList s = response.body();
-                Log.d("RESPUESTA", s.toString());
+                List<Service> lista_services = s.getLista_service();
+                Log.d("RESPUESTA", lista_services.toString());
             }
             @Override
             public void onFailure(Call<ServiceList> call, Throwable t) {

@@ -6,9 +6,9 @@ import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 import java.util.List;
-@Root(name = "service", strict = false)
+@Root(strict = false)
 public class Service {
-    @ElementList(name = "geoData")
+    @ElementList
     private List<GeoData> geoData;
 
     public Service() {

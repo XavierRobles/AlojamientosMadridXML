@@ -5,7 +5,7 @@ import org.simpleframework.xml.Root;
 
 import java.util.List;
 
-@Root(name = "serviceList", strict = false)
+@Root(strict = false)
 public class ServiceList {
     @ElementList(name = "service")
     private List<Service> lista_service;

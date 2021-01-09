@@ -3,7 +3,7 @@ package com.xavi.alojamientosmadridxml.entidad;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
-@Root(name="geoData", strict = false)
+@Root(strict = false)
 public class GeoData {
     @Element(name = "address")
     public String address;
@@ -13,16 +13,6 @@ public class GeoData {
     private String provincia;
     @Element(name="country")
     private String pais;
-
-    public GeoData() {
-    }
-
-    public GeoData(String address, String cp, String provincia, String pais) {
-        this.address = address;
-        this.cp = cp;
-        this.provincia = provincia;
-        this.pais = pais;
-    }
 
     public String getCalle() {
         return address;
