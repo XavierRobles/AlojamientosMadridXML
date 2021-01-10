@@ -8,14 +8,14 @@ import java.util.List;
 @Root(strict = false)
 public class ServiceList {
     @ElementList(name = "service")
-    private List<GeoData> lista_service;
+    private List<Service> lista_service;
 
 
-    public List<GeoData> getLista_service() {
+    public List<Service> getLista_service() {
         return lista_service;
     }
 
-    public void setLista_service(List<GeoData> lista_service) {
+    public void setLista_service(List<Service> lista_service) {
         this.lista_service = lista_service;
     }
 

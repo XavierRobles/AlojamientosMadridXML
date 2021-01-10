@@ -29,7 +29,7 @@ public class PeticionXML {
             @Override
             public void onResponse(Call<ServiceList> call, Response<ServiceList> response) {
                 ServiceList s = response.body();
-                List<GeoData> lista_services = s.getLista_service();
+                List<Service> lista_services = s.getLista_service();
                 Log.d("RESPUESTA", s.getLista_service().toString());
 
             }
